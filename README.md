@@ -104,9 +104,9 @@ Designed for:
 # Installation
 
 ```bash
-git clone https://github.com/<username>/kali-bootstrap.git
+git clone https://github.com/prajwal2005singh/hacker-kali-setup.git
 
-cd kali-bootstrap
+cd hacker-kali-setup
 
 chmod +x setup.sh
 
