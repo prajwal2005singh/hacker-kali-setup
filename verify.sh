@@ -2,9 +2,14 @@
 
 set -e
 
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$ROOT_DIR/lib/common.sh"
+
 TOOLS=(
 git
 go
+python3
+pip3
 subfinder
 httpx
 nuclei
@@ -18,21 +23,21 @@ assetfinder
 qsreplace
 dalfox
 ffuf
+nmap
 )
 
 echo
-echo "Verification"
-echo "============"
+echo "========== Verification =========="
 echo
 
 for tool in "${TOOLS[@]}"
 do
-
     if command -v "$tool" >/dev/null 2>&1
     then
-        printf "✓ %-15s\n" "$tool"
+        success "$tool"
     else
-        printf "✗ %-15s\n" "$tool"
+        error "$tool"
     fi
-
 done
+
+echo
